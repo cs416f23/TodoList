@@ -1,0 +1,14 @@
+{% extends "todo/base.html" %}
+
+{% block body %}
+    <h1>Add Tasks</h1>
+
+    <form action="{% url 'add' %}" method="post">
+    {% csrf_token %}
+        <input type="text" placeholder="Add tasks" name="task">
+        <input type="submit" value="Add">
+    </form>
+
+    <a href="{% url 'index' %}">See tasks</a>
+
+{% endblock %}
